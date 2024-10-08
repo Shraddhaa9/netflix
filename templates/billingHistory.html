@@ -1,0 +1,34 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<table>
+    <thead>
+        <th>Transaction Id</th>
+        <th>Billing Address</th>
+        <th>Amount</th>
+        <th>Plan</th>
+        <th>Date</th>
+    </thead>
+    <tbody>
+        {% for row in items %}
+            <tr>
+                <td>{{row.transaction_id}}</td>
+                <td>{{row.billing_address}}</td>
+                <td>{{row.amount_paid}}</td>
+                <td>{{row.plan}}</td>
+                <td>{{row.billing_date}}</td>
+            </tr>
+        {% endfor %}    
+    </tbody>
+</table>
+<h1 class="pt-2">Average Price Paid for this month</h1>
+<h4>{{avg}}</h4>
+<h1 class="pt-2">Total Price Paid for this month</h1>
+<h4>{{sum}}</h4>
+<h1 class="pt-2">Total times Paid for this month</h1>
+<h4>{{count}}</h4>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
